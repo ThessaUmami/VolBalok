@@ -1,20 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  AppRegistry,
+  StyleSheet,
+  View
+} from 'react-native';
+import Header from './src/Header';
+import Footer from './src/Footer';
+import Sales from './src/Sales';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>thessa sahara umami </Text>
-        <Text>Saya Belajar React-Native</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={styles.containerMain}>
+        <Header headerText={'Header'} />
+        <Sales />
+        <Footer footerText={'Footer'} />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerMain: {
+    paddingTop: 20,
     flex: 1,
+    backgroundColor: '#b12727'
   }
-});
+})
+
+AppRegistry.registerComponent('ThessaUmami', () => App);
